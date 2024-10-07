@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 public class InfixToPostfix {
-    private static int piority(char operation) { //first of all define the piority
+    private static int piority(char operation) { //first of all define the priority
         switch (operation) {
             case '+':
                 case '-':
