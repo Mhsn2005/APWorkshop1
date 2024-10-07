@@ -24,17 +24,17 @@ public class InfixToPostfix {
             else if (currentChar == '(') { // and also if it is a '('
                 stack.push(currentChar);
             }
-            else if (currentChar == ')') { // but if it is a ')' so we have to process everything that is inside the parantheses
+            else if (currentChar == ')') { // but if it is a ')' so we have to process everything that is inside the parentheses
                 while (!stack.isEmpty() && piority(stack.peek()) != '(') {
                     postfix.append(stack.pop()); // and by processing I mean add it to our postfix string
                 }
                 stack.pop(); // this one is to pop the '('
             }
-            else { // but what if it's not a number , or paranthesis ; so it would be a operator
+            else { // but what if it's not a number , or parenthesis ; so it would be a operator
                 while (!stack.isEmpty() && piority(stack.peek()) >= piority(currentChar)) {
-                    postfix.append(stack.pop()); // if the piority of the operator in our stack is grater than the new one , so we have to add the one in the stack to our postfix string and then append the current one
+                    postfix.append(stack.pop()); // if the priority of the operator in our stack is grater than the new one , so we have to add the one in the stack to our postfix string and then append the current one
                 }
-                stack.push(currentChar);// just like I mentioned we append it to sstack "after" the while loop
+                stack.push(currentChar);// just like I mentioned we append it to stack "after" the while loop
             }
             while (!stack.isEmpty() ) {
                 postfix.append(stack.pop()); // and at the end we pop everything to our postfix
